@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> </title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=description" />
+    
+</head>
+<body> 
+   <h1>JUST CHAT ATP</h1>
+    <% messages.forEach(element => { %>
+      <ul style="list-style-type: none;" id="messages">
+      <li id="msg-<%= element.id %>">
+        
+          <div class="container">
+         <div class="user"><u><%= element.user %></u></div>
+         <div class="message"><i><%= element.text%></i></div>  
+         <div class="date"><b><%= element.added%></b></div>
+         <a class="out" href="/message/<%= element.id %> "><h4>View Details ===></h4> </a>
+         </div>      
+        </li>
+      </ul>   
+      
+      
+     
+    <% }) %>
+   
+
+  <form action="/new" method="GET">
+  <button type="submit">Add New Message</button>
+</form>
+
+  
+</body>
+</html>
